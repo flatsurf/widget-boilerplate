@@ -1,6 +1,6 @@
 {
   "name": "widget-boilerplate",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.4",
   "description": "repeated boilerplate for Jupyter Widgets",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -24,8 +24,10 @@
     "@types/callsite": "^1.0.30",
     "@types/webpack": "^4.4.34",
     "@types/webpack-dev-server": "^3.1.6",
-    "callsite": "^1.0.0",
     "publish-to-git": "^1.1.7",
     "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "callsite": "^1.0.0"
   }
 }
