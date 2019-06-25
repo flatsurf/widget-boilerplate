@@ -13,16 +13,17 @@
     "type": "git",
     "url": "git@github.com:flatsurf/widget-boilerplate.git"
   },
+  "homepage": "https://github.com/flatsurf/widget-boilerplate#readme",
   "keywords": [],
   "author": "Julian Rüth",
   "license": "MIT",
   "devDependencies": {
+    "@jupyter-widgets/base": "^1.2.5",
+    "@phosphor/application": "^1.6.4",
+    "@phosphor/widgets": "^1.8.1",
     "@types/webpack": "^4.4.34",
     "@types/webpack-dev-server": "^3.1.6",
     "publish-to-git": "^1.1.7",
-    "typescript": "^3.5.2",
-    "@jupyter-widgets/base": "^1.2.5",
-    "@phosphor/application": "^1.6.4",
-    "@phosphor/widgets": "^1.8.1"
+    "typescript": "^3.5.2"
   }
 }
