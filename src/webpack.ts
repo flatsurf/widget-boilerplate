@@ -1,6 +1,7 @@
 // Provides some repeated defaults to include in your webpack.config.js.
 
 import path from "path";
+import callsite from "callsite";
 import { name } from './python';
 import webpack from "webpack";
 import WebpackDevServer from "webpack-dev-server";
@@ -73,6 +74,8 @@ export function devServer(package_json: any, notebook_path: string): WebpackDevS
 }
 
 export function createConfig(package_json: any, config: any): webpack.Configuration[] {
+  const dirname = path.dirname(callsite()[1].getFileName());
+
 	return [
 		// Compiles our main TypeScript into JavaScript blobs. This is the generic code
 		// without any of the glue for the Notebook or Jupyter Lab.
@@ -82,7 +85,7 @@ export function createConfig(package_json: any, config: any): webpack.Configurat
 			entry: './src/typescript/index.ts',
 			output: {
 				filename: 'index.js',
-				path: path.resolve(__dirname, 'lib'),
+				path: path.resolve(dirname, 'lib'),
 				libraryTarget: 'commonjs'
 			},
 		},
@@ -93,7 +96,7 @@ export function createConfig(package_json: any, config: any): webpack.Configurat
 			entry: './src/typescript/plugin.ts',
 			output: {
 				filename: 'plugin.js',
-				path: path.resolve(__dirname, 'lib'),
+				path: path.resolve(dirname, 'lib'),
 				libraryTarget: 'commonjs'
 			},
 			// plugin.ts references index.ts which is the entrypoint for the actual
@@ -110,7 +113,7 @@ export function createConfig(package_json: any, config: any): webpack.Configurat
 			entry: './src/typescript/nbextension.ts',
 			output: {
 				filename: 'extension.js',
-				path: path.resolve(__dirname, python_name(package_json), 'nbextension'),
+				path: path.resolve(dirname, python_name(package_json), 'nbextension'),
 				libraryTarget: 'amd'
 			},
 		},
@@ -121,7 +124,7 @@ export function createConfig(package_json: any, config: any): webpack.Configurat
 			entry: './src/typescript/index.ts',
 			output: {
 				filename: 'index.js',
-				path: path.resolve(__dirname, python_name(package_json), 'nbextension'),
+				path: path.resolve(dirname, python_name(package_json), 'nbextension'),
 				libraryTarget: 'amd'
 			},
 		},

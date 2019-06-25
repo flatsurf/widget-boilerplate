@@ -21,8 +21,10 @@
     "@jupyter-widgets/base": "^1.2.5",
     "@phosphor/application": "^1.6.4",
     "@phosphor/widgets": "^1.8.1",
+    "@types/callsite": "^1.0.30",
     "@types/webpack": "^4.4.34",
     "@types/webpack-dev-server": "^3.1.6",
+    "callsite": "^1.0.0",
     "publish-to-git": "^1.1.7",
     "typescript": "^3.5.2"
   }
